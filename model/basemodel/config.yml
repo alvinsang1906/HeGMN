@@ -1,0 +1,76 @@
+SimGNN:
+    histogram: True       # 是否使用直方图 所有人，除了官方，都不用直方图。我看了所有版本的SimGNN，无一例外都把直方图关了。因为加上以后这个性能是真的差。
+    tensor_neurons: 16
+    bins: 16
+    filters_1: 64         # 第一层GCN的输出维度 ISONET中设置为128 64 32
+    filters_2: 32         # 第二层GCN的输出维度
+    filters_3: 16         # 第三层GCN的输出维度
+
+    bottle_neck_neurons_1: 16
+    bottle_neck_neurons_2: 8 
+    bottle_neck_neurons_3: 4
+
+    dropout: 0.5
+
+basicGNN:   # [GCN, GIN, GAT]
+    num_layers: 3
+    hidden_channels: 128
+
+RGCN:
+    hidden_channels: 128
+
+GraphSim:
+    reshape: 30
+    cls_dim: 32
+    gcn_first_dim: 64
+    gcn_second_dim: 32
+    gcn_third_dim: 16
+
+NAGSL:
+    embedding_size: 128
+    encoder_ffn_size: 128
+    channel_ffn_size: 128
+    n_heads: 8
+    n_channel_transformer_heads: 4
+
+    conv_channels_0: 32
+    conv_channels_1: 64
+    conv_channels_2: 1
+    conv_channels_3: 256
+    dropout: 0.1
+    conv_l_relu_slope: 0.33
+
+    GT_res: True
+    share_qk: True
+    msa_bias: True
+    channel_align: True
+    sim_mat_learning_ablation: True
+
+GMN:
+    node_state_dim: 32
+    graph_rep_dim: 128
+    node_hidden_sizes: [64]
+    edge_hidden_sizes: [64, 64]
+    n_prop_layers: 5
+
+    share_prop_params: True
+    layer_norm: False
+    use_reverse_direction: True
+    reverse_dir_param_different: False
+
+SimpleHGN:
+    edge_dim: 64
+    hidden_dim: 64
+    out_dim: 128
+    num_layers: 2
+    num_heads: [8, 8, 1]
+    dropout: 0.5
+    slope: 0.05
+    residual: True
+    alpha: 0.05
+
+ERIC:
+    filters: [64, 64, 32, 16]
+    tensor_neurons: 16
+    reduction: 2
+    dropout: 0

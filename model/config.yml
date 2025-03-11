@@ -1,0 +1,52 @@
+#### ==== 记录所有数据集的信息 ==== ####
+AIDS700nef:
+    num_features: 29
+MUTAG:
+    num_features: 12
+    num_etypes: 4
+    num_ntypes: 7
+    max_nums: 28
+ACM:
+    num_features: 1902
+    num_etypes: 3
+    num_ntypes: 3
+    max_nums: 10
+DBLP:
+    num_features: 334
+    num_etypes: 4
+    num_ntypes: 4
+    max_nums: 8
+IMDB:
+    num_features: 1256
+    num_etypes: 3
+    num_ntypes: 3
+    max_nums: 12
+
+#### ==== 记录所有模型的通用信息，如果需要替换也可以直接在对应的模型处添加相应字段即可覆盖 ==== ####
+ALL_MODEL:
+    epoches: 10000
+    patience: 30
+    seed: 42
+    start_val_iter: 100
+    every_val_iter: 1
+    gpu_index: 1
+    batch_size: 128
+    lr: 0.001
+    HGED: True # 是否使用HGED进行计算，还是计算同质GED
+    proportion: 622
+    wandb: True
+
+HGMN:
+    hidden_dim: 128  # D
+
+    NTN_out_dim: 128 # K
+
+    num_heads: 8
+
+    pool_first_dim: 32
+    pool_second_dim: 64
+    pool_third_dim: 1
+    pool_forth_dim: 256
+
+    node_match: False # [True, False]
+    dropout: 0.1
